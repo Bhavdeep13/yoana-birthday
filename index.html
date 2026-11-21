@@ -2,20 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="theme-color" content="#fbeff7">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title>Happy Birthday! 🎉 Scratch & Win</title>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
 <style>
   :root { --pink:#ff4d8d; --gold:#ffc93c; --purple:#6a3df0; --ink:#2b1b4a; }
   * { box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; }
-  html,body { height:100%; }
+  html { background:#f3ecff; min-height:100%; }
   body {
-    font-family:'Fredoka',sans-serif; color:var(--ink);
-    background:radial-gradient(circle at 20% 10%,#ffd6e8 0,transparent 40%),
-               radial-gradient(circle at 85% 90%,#d9ccff 0,transparent 45%),
-               linear-gradient(160deg,#fff4f9,#f3ecff);
-    min-height:100vh; display:flex; overflow-x:hidden;
+    font-family:'Fredoka',sans-serif; color:var(--ink); background:transparent;
+    min-height:100vh; min-height:100dvh; display:flex; overflow-x:hidden;
   }
+  /* background fixed to the whole screen, also behind Safari's toolbars */
+  body::before { content:""; position:fixed; inset:-10vh 0; z-index:-1; pointer-events:none;
+    background:radial-gradient(circle at 20% 15%,#ffd6e8 0,transparent 40%),
+               radial-gradient(circle at 85% 85%,#d9ccff 0,transparent 45%),
+               linear-gradient(160deg,#fff4f9,#f3ecff); }
   #confetti { position:fixed; inset:0; pointer-events:none; z-index:50; }
   .wrap { width:min(420px,92vw); margin:auto; text-align:center; padding:24px 0 40px; position:relative; z-index:2; }
   h1 { font-family:'Pacifico',cursive; font-weight:400; font-size:2.4rem; color:var(--pink); text-shadow:2px 3px 0 #fff; line-height:1.2; }
