@@ -512,7 +512,6 @@ $('introHint').addEventListener('click', () => {
 });
 
 /* ---------- save gift card as an image ---------- */
-const QR_IMG = new Image(); QR_IMG.src = 'data:image/png;base64,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';
 function voucherCanvas(){
   const W=1200, H=760, c=document.createElement('canvas'); c.width=W; c.height=H; const x=c.getContext('2d');
   const rr=(X,Y,w,h,r)=>{x.beginPath();x.moveTo(X+r,Y);x.arcTo(X+w,Y,X+w,Y+h,r);x.arcTo(X+w,Y+h,X,Y+h,r);x.arcTo(X,Y+h,X,Y,r);x.arcTo(X,Y,X+w,Y,r);x.closePath();};
@@ -529,17 +528,12 @@ function voucherCanvas(){
   x.fillStyle='#fff'; x.font='600 48px monospace'; x.fillText($('code').textContent, 110, 600);
   x.textAlign='right'; x.font='400 38px Fredoka, sans-serif'; x.fillText('With love,', W-80, 575);
   x.font='700 44px Fredoka, sans-serif'; x.fillText('Your friends 💌', W-80, 625);
-  // QR code (links to this page) so the picture can be turned into an Apple Wallet pass
-  if (QR_IMG.complete && QR_IMG.naturalWidth) {
-    x.fillStyle='#fff'; rr(W-330,60,250,250,24); x.fill();
-    x.imageSmoothingEnabled=false; x.drawImage(QR_IMG, W-320, 70, 230, 230);
-  }
   x.restore(); return c;
 }
 // prepare the picture in advance so the phone's share sheet (→ Save Image) can open on tap
 let giftFile = null;
 const buildGiftFile = () => { try { voucherCanvas().toBlob(b => { try { giftFile = new File([b], 'Yoana-gift-card.png', {type:'image/png'}); } catch(e) {} }, 'image/png'); } catch(e) {} };
-Promise.all([document.fonts ? document.fonts.ready : 0, QR_IMG.decode ? QR_IMG.decode().catch(()=>{}) : 0]).then(buildGiftFile);
+(document.fonts ? document.fonts.ready : Promise.resolve()).then(buildGiftFile);
 function showGiftOverlay(){
   $('ovImg').src = voucherCanvas().toDataURL('image/png'); $('ov').classList.remove('hidden');
   $('ovHint').style.opacity = 1; setTimeout(() => $('ovHint').style.opacity = 0, 3500);
