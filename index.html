@@ -9,10 +9,10 @@
 <style>
   :root { --pink:#ff4d8d; --gold:#ffc93c; --purple:#6a3df0; --ink:#2b1b4a; }
   * { box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; }
-  html { background:#f3ecff; min-height:100%; }
+  html { background:#f3ecff; min-height:100%; overflow-x:hidden; overflow-x:clip; }
   body {
     font-family:'Fredoka',sans-serif; color:var(--ink); background:transparent;
-    min-height:100vh; min-height:100dvh; display:flex; overflow-x:hidden;
+    min-height:100vh; min-height:100dvh; display:flex; overflow-x:hidden; overflow-x:clip; width:100%; position:relative;
   }
   /* background fixed to the whole screen, also behind Safari's toolbars */
   body::before { content:""; position:fixed; inset:-10vh 0; z-index:-1; pointer-events:none;
@@ -20,7 +20,7 @@
                radial-gradient(circle at 85% 85%,#d9ccff 0,transparent 45%),
                linear-gradient(160deg,#fff4f9,#f3ecff); }
   #confetti { position:fixed; inset:0; pointer-events:none; z-index:50; }
-  .wrap { width:min(420px,92vw); margin:auto; text-align:center; padding:24px 0 40px; position:relative; z-index:2; }
+  .wrap { width:min(420px,92vw); max-width:100%; margin:auto; text-align:center; padding:24px 0 40px; position:relative; z-index:2; }
   h1 { font-family:'Pacifico',cursive; font-weight:400; font-size:2.4rem; color:var(--pink); text-shadow:2px 3px 0 #fff; line-height:1.2; }
   .sub { margin:8px 0 18px; font-size:1.05rem; opacity:.8; }
   .tickets { display:flex; justify-content:center; gap:10px; margin-bottom:18px; }
