@@ -146,13 +146,19 @@
   .ov-hint { color:#fff; margin-top:18px; font-size:1rem; transition:opacity .8s; text-align:center; }
   .ov-hint small { display:block; opacity:.6; margin-top:6px; font-size:.8rem; }
   .wallet-btn { display:inline-flex; flex-direction:column; align-items:flex-start; justify-content:center; text-decoration:none;
-    background:#000; color:#fff; border-radius:12px; padding:7px 18px 8px 52px; position:relative; line-height:1.1;
-    box-shadow:0 6px 0 #333; font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif; }
+    background:linear-gradient(135deg,#6a3df0,#b043c8 55%,#ff4d8d); color:#fff; border-radius:999px; padding:8px 26px 9px 58px; position:relative; line-height:1.1;
+    box-shadow:0 6px 0 #5a2bb8; font-family:'Fredoka',sans-serif; }
   .wallet-btn:active { transform:scale(.95); }
-  .wallet-btn::before { content:""; position:absolute; left:14px; top:50%; width:28px; height:21px; margin-top:-10px; border-radius:4px;
-    background:linear-gradient(180deg,#4fb3e8 0 25%,#f9c13c 25% 50%,#f07a3a 50% 75%,#e9445d 75%); }
-  .wallet-btn span { font-size:.72rem; opacity:.9; }
-  .wallet-btn b { font-size:1.05rem; font-weight:600; }
+  .wallet-btn::before { content:""; position:absolute; left:20px; top:50%; width:28px; height:21px; margin-top:-10px; border-radius:5px;
+    background:linear-gradient(180deg,#ffd6e8 0 25%,#ffc93c 25% 50%,#ff9ec7 50% 75%,#fff 75%); box-shadow:0 0 0 2px rgba(255,255,255,.35); }
+  .wallet-btn span { font-size:.75rem; opacity:.9; }
+  .wallet-btn b { font-size:1.05rem; font-weight:700; }
+  #giftBtns { flex-wrap:nowrap; gap:8px; align-items:stretch; }
+  #giftBtns > * { flex:1 1 0; min-width:0; }
+  #giftBtns #saveG { font-size:.92rem; padding:10px 10px; line-height:1.15; }
+  #giftBtns .wallet-btn { padding:7px 10px 8px 46px; border-radius:999px; }
+  #giftBtns .wallet-btn::before { left:14px; width:24px; height:18px; margin-top:-9px; }
+  #giftBtns .wallet-btn span { font-size:.68rem; } #giftBtns .wallet-btn b { font-size:.92rem; white-space:nowrap; }
   .float { position:fixed; font-size:1.6rem; opacity:.35; pointer-events:none; animation:float 9s linear infinite; z-index:1; }
   @keyframes float { from { transform:translateY(110vh) rotate(0); } to { transform:translateY(-15vh) rotate(360deg); } }
 </style>
@@ -243,7 +249,7 @@
       </div>
     </div>
     <p class="rules">✔ Any store, anything you want<br>✔ Show this card to us to redeem<br>✔ Valid until 15 December 2026</p>
-    <div class="btns" id="giftBtns"><button class="b1" id="saveG">📸 Save to Images</button><a class="wallet-btn" id="walletG" href="https://bhavdeep13.github.io/yoana-birthday/yoana-gift-card.pkpass"><span>Add to</span><b>Apple Wallet</b></a></div>
+    <div class="btns" id="giftBtns"><button class="b1" id="saveG">📸 Save to<br>Images</button><a class="wallet-btn" id="walletG" href="https://bhavdeep13.github.io/yoana-birthday/yoana-gift-card.pkpass"><span>Add to</span><b>Apple Wallet</b></a></div>
     <div class="overlay hidden" id="ov"><img id="ovImg" draggable="false" alt="Yoana's birthday gift card"><p class="ov-hint" id="ovHint">📸 Take a screenshot to save it to your Photos<small>tap anywhere to close</small></p></div>
   </section>
 </div>
